@@ -1,0 +1,10 @@
+.mainDiv{
+    position: relative;
+  }
+  #add-button{
+  
+    right: 20px;
+    top: 10px;
+    left: auto;
+    position: absolute;
+  }

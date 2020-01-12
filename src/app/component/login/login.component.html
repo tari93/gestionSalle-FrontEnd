@@ -1,0 +1,61 @@
+<!--<div class="row container">
+  <div class="col-lg-5">
+    <form [formGroup]="loginForm" (submit)="login()">
+        <div class="imgcontainer">
+          <img src="assets/img/ormvah.jpg" alt="Avatar" class="avatar">
+        </div>
+      
+        <div class="container">
+          <label for="uname"><b>Username</b></label>
+          <input type="text" placeholder="Enter Username" name="username" id="username" formControlName="username" [(ngModel)]="credentials.username" required>
+      
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password"  name="password" id="password" formControlName="password" [(ngModel)]="credentials.password" required>
+              
+          <button type="submit">Login</button>
+          <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+          </label>
+        </div>
+      
+        <div class="container" style="background-color:#f1f1f1">
+          <button type="button" class="cancelbtn">Cancel</button>
+          <span class="psw">Forgot <a href="#">password?</a></span>
+        </div>
+      </form>
+      
+</div>
+<div class="col-lg-7">
+  <div class="imgcontainer">
+    <img src="https://www.7boutik.com/images/cache/IMAGE_STOCK.500.jpg" alt="Avatar" class="avatar">
+    </div>
+    </div>
+</div>
+-->
+
+<div class="split left">
+  <div class="centered">
+<mat-card class="box">
+  <mat-card-header>
+    <mat-card-title>Se connecter</mat-card-title>
+  </mat-card-header>
+
+  <form class="example-form" [formGroup]="loginForm" (submit)="login()">
+    <mat-card-content>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Username"  formControlName="username" [(ngModel)]="credentials.username" required>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input matInput type="password" placeholder="Mot de passe" formControlName="password" [(ngModel)]="credentials.password" required>
+      </mat-form-field>
+    </mat-card-content>
+    <button mat-raised-button color="primary" class="btn-block">Log in</button>
+  </form>
+</mat-card>
+</div>
+</div>
+<div class="split right">
+  <div class="centered">
+  </div>
+</div>

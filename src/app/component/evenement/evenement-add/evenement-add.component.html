@@ -1,0 +1,57 @@
+<mat-toolbar>
+    <span>Nouveau evenement</span>
+    <span class="fill-remaining-space"></span>
+    <button class="btn-dialog-close" mat-stroked-button (click)="onClose()" tabindex="-1">
+        <mat-icon>clear</mat-icon>
+    </button>
+</mat-toolbar>
+
+            
+<div class="controles-container">
+     
+    <div class="row">
+        <div class="col-sm-6">
+            <app-date-time-picker  [(ngModel)]="dateDebut"  ></app-date-time-picker>
+        </div>
+        <div class="col-sm-6">
+          
+            <app-date-time-picker  [(ngModel)]="dateFin" ></app-date-time-picker>
+                 </div>
+    </div>
+    </div>
+<form [formGroup]="evenementForm" class="ormvah-form" (submit)="onSubmit()">
+    
+    
+    <mat-grid-list cols="2" >
+    <mat-grid-tile>
+        
+        <div class="controles-container">
+            <input type="hidden" formControlName="id">
+            <input type="hidden" formControlName="organisateur">
+            <mat-form-field>
+                <input formControlName="nom" matInput placeholder="Titre">
+            </mat-form-field>
+            <mat-form-field>
+                <input formControlName="programme" matInput placeholder="Programme">
+            </mat-form-field>
+            
+        </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        
+        <div class="controles-container">
+            <mat-select formControlName="salle" placeHolder="Specifiez la salle">
+                <ng-container *ngFor="let s of salles">
+                    <mat-option [value]="s">{{s.nom}}</mat-option>
+                </ng-container>
+            </mat-select>
+            <div class="button-row">
+                <button mat-raised-button color="primary" type="submit" [disabled]="evenementForm.invalid">
+                    Ajouter
+                </button>
+            </div>
+        </div>
+    </mat-grid-tile>
+    </mat-grid-list>
+
+</form>

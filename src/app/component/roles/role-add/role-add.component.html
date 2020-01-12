@@ -1,0 +1,21 @@
+<mat-toolbar>
+    <span>Nouveau role</span>
+    <span class="fill-remaining-space"></span>
+    <button class="btn-dialog-close" mat-stroked-button (click)="onClose()" tabindex="-1">
+        <mat-icon>clear</mat-icon>
+    </button>
+</mat-toolbar>
+<form [formGroup]="roleForm" class="ormvah-form" (submit)="onSubmit()">
+        <div class="controles-container">
+            <input type="hidden" formControlName="id">
+            <mat-form-field>
+                <input formControlName="name" matInput placeholder="Fonction">
+            </mat-form-field> 
+            <div class="button-row">
+                <button mat-raised-button color="primary" type="submit" [disabled]="roleForm.invalid">
+                    Ajouter
+                </button>
+            </div>
+        </div>        
+   
+</form>

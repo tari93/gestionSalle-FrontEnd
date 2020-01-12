@@ -1,0 +1,35 @@
+<div class="mainDiv">
+  <button mat-fab color="primary" id="add-button" matTooltip="Ajoutez evenement"
+  (click)="onCreate()"><i class="material-icons" >add</i></button>
+  
+  <div class="customer-list">
+    <div class="container">
+      <button mat-raised-button (click)="onCreate()">
+          <mat-icon>add</mat-icon>Ajouter equipement
+      </button>
+      <!--<app-equipement-list></app-equipement-list>-->
+      <div class='app-top'>
+          <button mat-button color="primary" (click)='toggleVisible()'>Calendrier</button>
+        </div>
+      
+        <div class='app-calendar' *ngIf="calendarVisible">
+          <full-calendar
+            #calendar
+            defaultView="dayGridMonth"
+            [weekends]="false"
+            [header]="{
+              left: 'prev,next today',
+              center: 'title',
+              right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+            }"
+            [plugins]="calendarPlugins"
+            [weekends]="calendarWeekends"
+            [events]="calendarEvents"
+            (dateClick)="handleDateClick($event)"
+          ></full-calendar>
+        </div>
+     
+  </div>
+  <app-evenement-list></app-evenement-list>
+ 
+</div>

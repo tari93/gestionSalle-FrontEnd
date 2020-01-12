@@ -1,0 +1,24 @@
+<mat-toolbar>
+    <span>Nouveau equipement</span>
+    <span class="fill-remaining-space"></span>
+    <button class="btn-dialog-close" mat-stroked-button (click)="onClose()" tabindex="-1">
+        <mat-icon>clear</mat-icon>
+    </button>
+</mat-toolbar>
+<form [formGroup]="equipementForm" class="ormvah-form" (submit)="onSubmit()">
+        <div class="controles-container">
+            <input type="hidden" formControlName="id">
+            <mat-form-field>
+                <input formControlName="nom" matInput placeholder="Nom">
+            </mat-form-field> 
+            <mat-form-field>
+                <input formControlName="quantite" type="number" matInput placeholder="Quantite">
+            </mat-form-field> 
+            <div class="button-row">
+                <button mat-raised-button color="primary" type="submit" [disabled]="equipementForm.invalid">
+                    Ajouter
+                </button>
+            </div>
+        </div>        
+   
+</form>

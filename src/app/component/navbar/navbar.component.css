@@ -1,0 +1,14 @@
+.flex-vert-center {
+    height: 72px;
+    display: flex;
+    align-items: center;
+  }
+  .toolbar-button {
+    padding: 0;
+}
+    .mat-tab-label {
+        height: 72px;
+      }
+      .column {
+        width: 100%;
+      }

@@ -1,0 +1,24 @@
+<mat-toolbar>
+    <span>Selectionnez role</span>
+    <span class="fill-remaining-space"></span>
+    <button class="btn-dialog-close" mat-stroked-button (click)="onClose()" tabindex="-1">
+        <mat-icon>clear</mat-icon>
+    </button>
+</mat-toolbar>
+<form [formGroup]="selectionnerRoleForm" class="ormvah-form" (submit)="onSubmit()">
+        <div class="controles-container">
+                <mat-form-field>
+                    <mat-label>Selectionnez un role</mat-label>
+                    <mat-select formControlName="name" placeHolder="Role">
+                        <ng-container *ngFor="let r of roles">
+                            <mat-option value="{{r.name}}">{{r.name}}</mat-option>
+                        </ng-container>
+                    </mat-select>
+                </mat-form-field>
+                <div class="button-row">
+            <button class="btn btn-success" [disabled]=" selectionnerRoleForm.invalid">
+            Generer utilisateur
+            </button>
+            </div>
+            </div>
+    </form>
